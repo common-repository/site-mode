@@ -1,0 +1,16 @@
+#sm_sortable {
+  margin: 0;  
+  & .ui-state-default {    
+    background-color: var(--sm-social-media-color);
+    padding: calculateRem(16px);
+    margin-bottom: calculateRem(15px);
+    border-radius: 0.5rem;
+    & .option__row {
+      margin-bottom: 0;
+    }
+  }
+  & .ui-sortable-helper {
+    border: 2px dashed var(--sm-social-media-border);
+    background-color: rgba($secondary-color, 0.02);
+  }
+}

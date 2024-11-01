@@ -1,0 +1,104 @@
+.sm_checkbox_wrapper {
+  position: relative;  
+  & label {
+    padding: 0 $padding-left-right;
+    height: $checkbox-height-before + $border-width;
+    display: inline-flex;
+    align-items: center;
+    font-size: $form-field-font-size;
+  }
+  & input {
+    height: $checkbox-height-before;
+    width: $checkbox-width-before;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+  & input + label::before {
+    border: $border-width solid var(--sm-input-border-color);
+    content: "";
+    height: $checkbox-height-before;
+    width: $checkbox-width-before;
+    left: 0;
+    position: absolute;
+    top: 0;
+    border-radius: $form-field-border-radius;
+  }
+  & input + label::after {
+    content: "\2713";
+    opacity: 0;
+    font-size: $checkbox-height-after - calculateRem(4px);
+    font-weight: 700;
+    background-repeat: no-repeat;
+    height: $checkbox-height-after;
+    width: $checkbox-width-after;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: $transition-all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $form-field-border-radius;
+    border: $border-width solid transparent;
+  }
+  & input:checked + label::before {
+    background-color: var(--sm-primary-color);
+    border-color: var(--sm-primary-color)
+  }
+  & input:checked + label::after {
+    opacity: 1;
+    color: var(--sm-base-white-color);
+  }
+  input:hover + label::before {
+    border: 1px solid var(--sm-input-focus-border-color);
+  }
+  & input:focus + label::before {    
+    outline-color: transparent;
+    box-shadow: 0 0 0 1px var(--sm-base-white-color), 0 0 0 calculateRem(3px) var(--sm-primary-color) !important;
+  }
+}
+
+
+.um_checkbox_show_hide {
+  margin-bottom: 0 !important;
+  height: 100%;
+  width: 100%;
+  & label {
+    padding: 0;
+  }
+  & input + label::before {
+    content: '' !important;
+    background-image: url('../../admin/img/show-regular-24.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  & input + label::after {
+    content: "" !important;
+    background-image: url('../../admin/img/hide-regular-24.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  & input:checked + label::before {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+}

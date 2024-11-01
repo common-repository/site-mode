@@ -1,0 +1,111 @@
+.button_wrapper {
+  --btn-bg: var(--sm-button-bg-color);
+  --btn-border-color: var(--sm-button-border-color);
+  --btn-text-color: var(--sm-base-white-color);
+  --btn-padding: 0.5rem 1.5rem 0.625rem 1.5rem;
+  --btn-radius: 0.4rem;
+  --btn-font-size: 1rem;
+  --btn-line-height: 1.5;
+  --btn-text-align: center;
+  --btn-border-width: 1px;
+  --btn-border-style: solid;  
+}
+
+.btn {
+  background: var(--btn-bg);
+  border-color: var(--btn-border-color);
+  border-width: var(--btn-border-width);
+  border-style: var(--btn-border-style);
+  color: var(--btn-text-color);
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  font-size: var(--btn-font-size);
+  line-height: var(--btn-line-height);    
+  text-decoration: none;
+  display: inline-block;  
+  text-align: var(--btn-text-align);
+  cursor: pointer;
+  transition: all .2s;
+  min-width: min-content;
+  &:hover, &:focus {
+    --btn-bg: var(--sm-primary-color);
+    --btn-border-color: var(--sm-primary-color);
+    --btn-text-color: var(--sm-base-white-color) !important;
+  }
+}
+  
+.btn_outline {
+  --btn-bg: var(--sm-primary-light-color);  
+  --btn-text-color: var(--sm-base-black-color);
+  --btn-padding: 0.3rem 1.5rem 0.4rem 1.5rem;
+  --btn-radius: 0.2rem;
+  --btn-font-size: 0.8rem;
+  --btn-line-height: 1.5;  
+  border: 1px solid var(--sm-primary-light-color);
+  &:hover, &:focus {
+    --btn-bg: var(--sm-primary-color);
+    --btn-border-color: var(--sm-primary-color);
+    --btn-text-color: var(--sm-base-white-color);
+  }
+}
+
+.btn_sm {  
+  --btn-padding: 0.4rem 1rem 0.5rem 1rem;
+  --btn-font-size: 0.75rem;
+  --btn-line-height: 1;
+  border-radius: 0.4rem;
+  color: var(--sm-primary-color);
+  &:hover, &:focus {
+    color: var(--sm-base-white-color);
+  }
+}
+
+.btn_white {
+  --btn-bg: var(--sm-base-white-color);
+  --btn-border-color: var(--sm-base-white-color);
+  --btn-text-color: var(--sm-base-black-color);
+  border: 1px solid var(--sm-base-white-color);
+  &:hover, &:focus {     
+    --btn-bg: transparent;
+    --btn-border-color: var(--sm-base-white-color);
+    color: var(--sm-base-white-color) !important;
+  }
+}
+
+.submit_button {
+  & input, & button, & a {
+    background: var(--sm-button-bg-color) !important;
+    border-color: var(--sm-button-border-color) !important;
+    border-width: $btn-border-width !important;
+    color: var(--sm-base-white-color) !important;
+    padding: 0.3rem 1rem 0.4rem 1rem !important;
+    border-radius: 0.4rem !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    width: auto !important;
+    height: auto !important;
+    text-decoration: none !important;
+    display: block !important;  
+    text-align: center !important;
+    &:hover, &:focus {
+      background-color: darken($btn-bg-color, 3) !important;
+      border-color: darken($btn-bg-color, 3) !important;
+      outline: none !important;
+      box-shadow: 0 0 0 1px var(--sm-base-white-color), 0 0 0 3px var(--sm-primary-color) !important;
+    }
+  }
+  & button.site-mode-save-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;    
+    & .save-btn-loader {
+      display: flex;
+    }
+  }
+}
+
+  
+input[type=file] {
+    display: none;
+}

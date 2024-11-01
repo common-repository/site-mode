@@ -1,0 +1,29 @@
+.sm_textarea_cover {
+  
+  & textarea {
+    width: auto;
+    height: auto;
+    line-height: 3;
+    background: var(--sm-base-white-color);
+    border: $border-width solid var(--sm-secondary-color);
+    border-radius: $form-field-border-radius;
+    padding: $form-field-padding;
+    font-size: $form-field-font-size;
+    font-family: var(--sm-open-sans);
+    &:active, &:hover, &:focus-visible {
+      border-color: var(--sm-primary-color);
+    }
+    &:focus {
+      @include box-shadow();
+      outline: $outline-width solid transparent;
+    }
+  }
+}
+.label_top {
+  & label {
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+    font-size: $form-field-font-size;
+  }
+}

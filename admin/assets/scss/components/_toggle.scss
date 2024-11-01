@@ -1,0 +1,40 @@
+.um_toggle{
+  margin-bottom: 1rem;
+  display: block;
+  .toggle-control{
+    transition: $transition-all;
+    width: $width;
+    height: $height;
+    display: block;
+    border: 2px solid var(--sm-secondary-color);
+    border-radius: $height;
+    background-color: var(--sm-secondary-color);
+    position: relative;
+    cursor: pointer;
+    &:after{
+      transition: $transition-all;
+      content: "";
+      width: $width/2;
+      height: $height;
+      display: block;
+      background-color: var(--sm-base-white-color);
+      border-radius: 50%;
+      box-shadow: 0 1px calculateRem(2px) rgba(black, .2),0 calculateRem(3px) calculateRem(2px) rgba(black,.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  input{
+    display: none;
+    &:checked + .toggle-control{
+      border-color: var(--sm-primary-color);
+      background-color: var(--sm-primary-color);
+      &:after{
+        left: $width/2;
+        top: 0;
+      }
+    }
+  }
+}

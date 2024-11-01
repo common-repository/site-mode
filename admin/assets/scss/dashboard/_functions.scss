@@ -1,0 +1,10 @@
+//---------------------------------------
+// Functions
+//  1.  PX to REM conversion function
+//---------------------------------------
+
+//  1.  PX to REM conversion function (based on 16px body font-size)
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}

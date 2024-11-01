@@ -1,0 +1,24 @@
+.sm_input_cover {  
+  & input[type="text"], & input.number[type="number"] {
+    width: $form-fields-width;
+    height: $form-fields-height;
+    line-height: 3;
+    background: var(--sm-base-white-color);
+    border: $border-width solid var(--sm-input-border-color);
+    border-radius: $form-field-border-radius;
+    padding: $form-field-padding;
+    font-size: $form-field-font-size;
+    font-family: var(--sm-open-sans);    
+    &:hover {
+      border: 1px solid var(--sm-input-focus-border-color);
+    }
+    &:active, &:focus-visible, &:focus {      
+      outline-color: transparent;
+      box-shadow: 0 0 0 1px var(--sm-base-white-color), 0 0 0 3px var(--sm-primary-color) !important;
+    }
+    // &:focus {
+    //   //@include box-shadow();
+    //   outline: $outline-width solid transparent;
+    // }
+  }  
+}

@@ -1,0 +1,62 @@
+.sm_select {
+  position: relative;
+  display: flex;
+  width: $form-fields-width;
+  height: $form-fields-height;
+  line-height: 3;
+  background: var(--sm-base-white-color);
+  border-radius: $form-field-border-radius; 
+  
+  select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border: $border-width solid var(--sm-input-border-color) !important;
+    background: var(--sm-base-white-color);
+    background-image: none;
+    flex: 1;
+    padding: 0 3rem 0 1rem;
+    color:black;
+    cursor:pointer;
+    font-size: $form-field-font-size;
+    font-family: var(--sm-open-sans);
+    max-width: 100%;
+    width: 100%;
+
+    &::-ms-expand {
+      display: none;
+    }   
+    &:hover {
+      border: 1px solid var(--sm-input-focus-border-color) !important;
+    }
+    &:active, &:focus-visible, &:focus {      
+      outline-color: transparent !important;
+      box-shadow: 0 0 0 1px var(--sm-base-white-color), 0 0 0 calculateRem(3px) var(--sm-primary-color) !important;
+    }
+  }
+
+  & .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: calculateRem(5px) solid transparent;
+    border-right: calculateRem(5px) solid transparent;
+    border-top: calculateRem(5px) solid var(--sm-secondary-color);
+    position: absolute;
+    top: 50%;
+    right: calculateRem(15px);
+    transform: translateY(-50%);
+    transition: $transition-all;
+    cursor:pointer;
+    pointer-events:none;
+  }
+  &:hover {
+    color: var(--sm-secondary-color);
+    opacity: 1;
+    & .arrow-down {
+      border-top: calculateRem(5px) solid var(--sm-primary-color);
+    }
+  }
+}

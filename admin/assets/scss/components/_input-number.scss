@@ -1,0 +1,94 @@
+input[type="number"] {
+  -moz-appearance: textfield;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+.um_number-cover {
+  display: flex;
+  margin: 0;
+  position: relative;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  & input {
+    color: var(--sm-secondary-color);
+    border-radius: $form-field-border-radius;
+    background-color: var(--sm-base-white-color);
+    border: $border-width solid var(--sm-secondary-color);
+    font-size: $form-field-font-size;
+    display: block;
+    padding: 0 2.5rem 0 1em;
+    margin: 0;
+    text-align: center;
+    width: 8rem;
+    height: $form-fields-height;
+    &:active, &:hover, &:focus-visible, &:focus {
+      border: 1px solid var(--sm-input-focus-border-color);
+      outline-color: transparent;
+      box-shadow: 0 0 0 1px var(--sm-base-white-color), 0 0 0 3px var(--sm-primary-color) !important;
+    }
+  }
+
+  & .um_number-cover--nav {
+    //height: 100%;
+    width: 2rem;
+    height: 100%;
+    border-top-right-radius: $form-field-border-radius;
+    border-bottom-right-radius: $form-field-border-radius;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    & .um_InputButton {
+      font-size: $form-field-font-size;
+      cursor: pointer;
+      border-bottom: $border-width solid darken($secondary-color, 3%);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      font-weight: 700;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--sm-secondary-color);
+      transition: $transition-all;
+      & svg {
+        width: 1rem;
+        height: 1rem;
+        & path {
+          fill: var(--sm-base-white-color);
+        }
+      }
+      &:active {
+        outline: $outline-width solid transparent;
+      }
+      &.um_InputUp {
+        padding-top: calculateRem(2px);
+      }
+      &.um_InputDown {
+      }
+      &:last-child {
+        border-bottom: none;
+        &:hover {
+          border-bottom: none;
+        }
+      }
+      &:hover {
+        background-color: darken($secondary-color, 5%);
+        border-bottom: $border-width solid transparent;        
+        & svg {
+          & path {
+            fill: var(--sm-base-white-color);
+          }
+        }
+      }
+    }
+  }
+}
